@@ -1,4 +1,3 @@
-
 use std::ops::*;
 
 #[derive(Debug, Clone, Copy)]
@@ -12,7 +11,11 @@ pub struct Vec3 {
 impl Mul<f32> for Vec3 {
     type Output = Vec3;
     fn mul(self, other: f32) -> Vec3 {
-        Vec3 { x: self.x * other, y: self.y * other, z: self.z * other, }
+        Vec3 {
+            x: self.x * other,
+            y: self.y * other,
+            z: self.z * other,
+        }
     }
 }
 
@@ -80,7 +83,11 @@ impl Add for Vec3 {
     type Output = Vec3;
 
     fn add(self, other: Vec3) -> Vec3 {
-        Vec3 { x: self.x + other.x, y: self.y + other.y, z: self.z + other.z, }
+        Vec3 {
+            x: self.x + other.x,
+            y: self.y + other.y,
+            z: self.z + other.z,
+        }
     }
 }
 
@@ -107,7 +114,7 @@ pub fn cross(a: Vec3, b: Vec3) -> Vec3 {
     Vec3 {
         x: a.y * b.z - a.z * b.y,
         y: a.z * b.x + a.x * b.z,
-        z: a.x * b.y - a.y * b.x
+        z: a.x * b.y - a.y * b.x,
     }
 }
 
@@ -145,11 +152,15 @@ impl std::fmt::Display for Vec3 {
 }
 
 pub fn new_vec(x: f32, y: f32, z: f32) -> Vec3 {
-    Vec3 { x: x, y: y, z: z, }
+    Vec3 { x: x, y: y, z: z }
 }
 
 pub fn new_zeros() -> Vec3 {
-    Vec3 { x: 0.0, y: 0.0, z: 0.0, }
+    Vec3 {
+        x: 0.0,
+        y: 0.0,
+        z: 0.0,
+    }
 }
 
 pub type Point = Vec3;
