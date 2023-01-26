@@ -11,8 +11,8 @@ impl Ray {
     pub fn at(&self, t: f32) -> Point {
         self.origin + t * self.direction
     }
-}
 
-pub fn new_ray(origin: Point, direction: Vec3) -> Ray {
-    Ray { origin, direction }
+    pub fn new(origin: Point, direction: Vec3) -> Ray {
+        Ray { origin, direction }
+    }
 }

@@ -119,6 +119,18 @@ pub fn cross(a: Vec3, b: Vec3) -> Vec3 {
 }
 
 impl Vec3 {
+    pub fn new(x: f32, y: f32, z: f32) -> Vec3 {
+        Vec3 { x, y, z }
+    }
+
+    pub fn origin() -> Vec3 {
+        Vec3 {
+            x: 0.0,
+            y: 0.0,
+            z: 0.0,
+        }
+    }
+
     pub fn length_squared(&self) -> f32 {
         self.x * self.x + self.y * self.y + self.z * self.z
     }
@@ -148,18 +160,6 @@ impl Vec3 {
 impl std::fmt::Display for Vec3 {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "({}, {}, {})", self.x, self.y, self.z)
-    }
-}
-
-pub fn new_vec(x: f32, y: f32, z: f32) -> Vec3 {
-    Vec3 { x: x, y: y, z: z }
-}
-
-pub fn new_zeros() -> Vec3 {
-    Vec3 {
-        x: 0.0,
-        y: 0.0,
-        z: 0.0,
     }
 }
 
