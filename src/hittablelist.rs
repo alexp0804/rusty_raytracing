@@ -1,4 +1,3 @@
-
 use crate::HitRecord;
 use crate::Hittable;
 use crate::Ray;
@@ -9,7 +8,9 @@ pub struct HittableList {
 
 impl HittableList {
     pub fn new() -> HittableList {
-        HittableList { objects: Vec::new() }
+        HittableList {
+            objects: Vec::new(),
+        }
     }
     pub fn add(&mut self, object: Box<dyn Hittable>) {
         self.objects.push(object);

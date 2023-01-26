@@ -1,8 +1,7 @@
-
 use crate::HitRecord;
-use crate::Ray;
-use crate::Point;
 use crate::Hittable;
+use crate::Point;
+use crate::Ray;
 
 pub struct Sphere {
     center: Point,
@@ -23,7 +22,9 @@ impl Hittable for Sphere {
         let c = oc.length_squared() - self.radius * self.radius;
 
         let discriminant = half_b * half_b - a * c;
-        if discriminant < 0.0 { return false; }
+        if discriminant < 0.0 {
+            return false;
+        }
         let sqrtd = discriminant.sqrt();
 
         let mut root = (-half_b - sqrtd) / a;
